@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tawredat/presentation/features/auth_screens/widgets/auth_textFormField.dart';
+import 'package:tawredat/presentation/screens/auth_screens/widgets/auth_textFormField.dart';
 import 'package:tawredat/presentation/shared_widgets/custom_button.dart';
 
 import '../../../../core/assets_path/svg_path.dart';

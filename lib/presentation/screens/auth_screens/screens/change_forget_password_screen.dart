@@ -93,9 +93,7 @@ class _OtpScreenState extends State<ChangeForgetPasswordScreen> {
               SizedBox(height: 104.h,),
               CustomButton(
                   buttonTitle: 'تأكيد',
-                  isTapped: () {
-
-                  },
+                  isTapped: () {},
                   width: double.infinity)
             ],
           ),

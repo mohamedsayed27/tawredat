@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tawredat/core/app_router/screen_names.dart';
-import 'package:tawredat/presentation/features/intro_screens/splash_screen.dart';
+import 'package:tawredat/presentation/screens/intro_screens/splash_screen.dart';
 
-import '../../presentation/features/intro_screens/onboarding_screen.dart';
+import '../../presentation/screens/intro_screens/onboarding_screen.dart';
 
 class AppRouter {
 
