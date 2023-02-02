@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tawredat/core/app_colors/app_colors.dart';
 import 'package:tawredat/core/assets_path/fonts_path.dart';
 import 'package:tawredat/core/assets_path/svg_path.dart';
-
 import '../widgets/choose_login_or_register_button.dart';
+import '../widgets/login_component.dart';
 import '../widgets/register_component.dart';
 
 class LogoAnRegisterScreen extends StatefulWidget {
@@ -20,6 +20,10 @@ class _LogoAnRegisterScreenState extends State<LogoAnRegisterScreen> {
   final TextEditingController emailRegisterController = TextEditingController();
   final TextEditingController passwordRegisterController = TextEditingController();
   final TextEditingController confirmPasswordRegisterController = TextEditingController();
+  final TextEditingController phoneLoginController = TextEditingController();
+  final TextEditingController passwordLoginController = TextEditingController();
+  var loginFormKey = GlobalKey<FormState>();
+  var registerFormKey = GlobalKey<FormState>();
   bool isLogin = true;
 
   @override
@@ -93,7 +97,24 @@ class _LogoAnRegisterScreenState extends State<LogoAnRegisterScreen> {
                         ),
                       ],
                     ),
-                    Expanded(child: RegisterComponent(phoneController: phoneRegisterController, emailController: emailRegisterController, passwordController: passwordRegisterController, confirmPasswordController: confirmPasswordRegisterController)),
+                    SizedBox(height: 70.h,),
+                    Expanded(
+                      child: isLogin
+                          ? LoginComponent(
+                              phoneController: phoneLoginController,
+                              passwordController: passwordLoginController,
+                              onButtonTapped: (){},
+                              formKey: registerFormKey)
+                          : RegisterComponent(
+                              phoneController: phoneRegisterController,
+                              emailController: emailRegisterController,
+                              passwordController: passwordRegisterController,
+                              confirmPasswordController:
+                                  confirmPasswordRegisterController,
+                              onButtonTapped: () {},
+                              formKey: registerFormKey,
+                            ),
+                    ),
                   ],
                 ),
               ),
