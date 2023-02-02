@@ -44,7 +44,7 @@ class AuthTextFormField extends StatelessWidget {
             fontFamily: FontsPath.tajawalRegular),
         suffixIcon: suffix,
         prefixIcon: prefix,
-        contentPadding: EdgeInsets.all(15.r),
+        contentPadding: EdgeInsets.all(17.r),
       ),
     );
   }

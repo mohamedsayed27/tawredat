@@ -8,12 +8,14 @@ class CustomButton extends StatelessWidget {
   final Function isTapped;
   final double? height;
   final double width;
+  final double paddingVertical;
+  final double paddingHorizontal;
 
   const CustomButton(
       {Key? key,
         required this.buttonTitle,
         required this.isTapped,
-        required this.width, this.height})
+        required this.width, this.height, this.paddingVertical=16, this.paddingHorizontal =45})
       : super(key: key);
 
   @override
@@ -23,10 +25,10 @@ class CustomButton extends StatelessWidget {
       width: width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.zero, // <-- Radius
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5.r), // <-- Radius
           ),
-          padding: EdgeInsets.symmetric(horizontal: 45.w, vertical: 16.h),
+          padding: EdgeInsets.symmetric(horizontal: paddingHorizontal.w, vertical: paddingVertical.h),
         ),
         onPressed: () {
           isTapped();
@@ -38,7 +40,7 @@ class CustomButton extends StatelessWidget {
             style: TextStyle(
                 color: Colors.white,
                 fontFamily: FontsPath.tajawalRegular,
-                fontSize: 14.sp),
+                fontSize: 15.sp),
           ),
         ),
       ),
