@@ -8,15 +8,18 @@ class CustomButton extends StatelessWidget {
   final String buttonTitle;
   final Function isTapped;
   final double? height;
+  final double? fontSize;
   final double width;
   final double paddingVertical;
   final double paddingHorizontal;
-
+  final Color? buttonColor;
+  final Color? buttonOverLayColor;
+  final Color textColor;
   const CustomButton(
       {Key? key,
         required this.buttonTitle,
         required this.isTapped,
-        required this.width, this.height, this.paddingVertical=16, this.paddingHorizontal =45})
+        required this.width, this.height, this.paddingVertical=16, this.paddingHorizontal =45, this.buttonColor, this.textColor = Colors.white, this.fontSize, this.buttonOverLayColor})
       : super(key: key);
 
   @override
@@ -26,6 +29,8 @@ class CustomButton extends StatelessWidget {
       width: width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+          foregroundColor: buttonOverLayColor,
+          backgroundColor: buttonColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.r), // <-- Radius
           ),
@@ -34,14 +39,14 @@ class CustomButton extends StatelessWidget {
         onPressed: () {
           isTapped();
         },
-
         child: Center(
           child: Text(
             buttonTitle,
+            textAlign: TextAlign.center,
             style: TextStyle(
-                color: Colors.white,
+                color: textColor,
                 fontFamily: FontsPath.tajawalRegular,
-                fontSize: 15.sp),
+                fontSize: fontSize??15.sp),
           ),
         ),
       ),

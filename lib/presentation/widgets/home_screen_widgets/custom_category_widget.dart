@@ -19,7 +19,6 @@ class CustomCategoryWidget extends StatelessWidget {
       height: 91.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5.r),
-        color: Colors.white,
         boxShadow: [
           BoxShadow(
               color: Colors.black.withOpacity(0.08),
@@ -27,26 +26,36 @@ class CustomCategoryWidget extends StatelessWidget {
               blurRadius: 20.r)
         ],
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SvgPicture.asset(
-            icon,
-            color: AppColors.primaryColor,
+      child: ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.zero,
+          backgroundColor: Colors.white,
+          foregroundColor: AppColors.primaryColor,
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                icon,
+                color: AppColors.primaryColor,
+              ),
+              SizedBox(
+                height: 14.h,
+              ),
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  fontFamily: FontsPath.tajawalRegular,
+                  color: Colors.black,
+                ),
+              ),
+            ],
           ),
-          SizedBox(
-            height: 14.h,
-          ),
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 12.sp,
-              fontFamily: FontsPath.tajawalRegular,
-              color: Colors.black,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

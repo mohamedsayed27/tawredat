@@ -3,5 +3,8 @@ class ImagesPath{
   static const onboarding1 = 'assets/images/onboarding1.png';
   static const onboarding2 = 'assets/images/onboarding2.png';
   static const onboarding3 = 'assets/images/onboarding3.png';
+  static const firstImage = 'assets/images/firstImage.png';
+  static const secondImage = 'assets/images/secondImage.png';
+  static const saudiGuy = 'assets/images/saudiGuy.png';
   ImagesPath._();
 }

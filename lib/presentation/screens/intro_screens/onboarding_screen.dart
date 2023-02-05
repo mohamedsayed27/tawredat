@@ -157,6 +157,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
+                        foregroundColor: AppColors.primaryColor,
                         shape: const CircleBorder(),
                         backgroundColor: Colors.white,
                         padding: EdgeInsets.all(8.r),

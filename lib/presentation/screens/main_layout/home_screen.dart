@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:tawredat/core/assets_path/images_path.dart';
+import 'package:tawredat/presentation/widgets/shared_widgets/custom_button.dart';
 import '../../../core/app_colors/app_colors.dart';
 import '../../../core/assets_path/fonts_path.dart';
 import '../../../core/assets_path/svg_path.dart';
 import '../../widgets/home_screen_widgets/custom_category_widget.dart';
+import '../../widgets/home_screen_widgets/home_intro_widget.dart';
+import '../../widgets/home_screen_widgets/home_search_text_field.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,95 +20,126 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         children: [
-          SizedBox(height: 70.h,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  Text('أهلاً أحمد',
-                      style: TextStyle(
-                          fontSize: 18.sp,
-                          fontFamily: FontsPath.tajawalBold,
-                          color: Colors.black)),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  Text('نتمني لك يوم سعيد',
-                      style: TextStyle(
-                          fontSize: 14.sp,
-                          fontFamily: FontsPath.tajawalLight,
-                          color: Colors.black)),
-                ],
-              ),
-              Container(
-                width: 48.w,
-                height: 48.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.black.withOpacity(0.08),
-                          offset: const Offset(0, 0),
-                          blurRadius: 20.r)
-                    ]),
-                child: Center(
-                  child: SvgPicture.asset(
-                    SvgPath.cart,
-                    color: AppColors.primaryColor,
-                  ),
-                ),
-              )
-            ],
+          SizedBox(
+            height: 70.h,
           ),
-          SizedBox(height: 43.h,),
+          HomeIntroWidget(name: 'أحمد',),
+          SizedBox(
+            height: 43.h,
+          ),
+          const HomeSearchTextField(),
+          SizedBox(
+            height: 20.h,
+          ),
           Container(
+            height: 105.h,
+            width: double.infinity,
+            clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.r),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black.withOpacity(0.08),
-                      offset: const Offset(0, 0),
-                      blurRadius: 20.r)
-                ],),
-            child: TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(2.r),
-                      borderSide: const BorderSide(
-                          color: AppColors.authTextFieldFillColor)),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(2.r),
-                      borderSide: const BorderSide(
-                          color: AppColors.authTextFieldFillColor)),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(2.r),
-                      borderSide: const BorderSide(
-                          color: AppColors.authTextFieldFillColor)),
-                  prefixIcon: Padding(
-                    padding: EdgeInsets.all(12.0.r),
-                    child: SvgPicture.asset(
-                      SvgPath.search,
-                    ),
-                  ),
-                  hintText: 'بحث',
-                  hintStyle: const TextStyle(fontFamily: FontsPath.tajawalRegular)),
+              borderRadius: BorderRadius.circular(8.r),
+            ),
+            child: Image.asset(
+              ImagesPath.firstImage,
+              fit: BoxFit.cover,
+              height: 100.h,
+              width: double.infinity,
             ),
           ),
-          SizedBox(height: 20.h,),
-          SizedBox(height: 24.h,),
+          SizedBox(
+            height: 24.h,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const[
+            children: const [
               CustomCategoryWidget(title: 'الافضل مبيعا', icon: SvgPath.spark),
               CustomCategoryWidget(title: 'المفضلة', icon: SvgPath.favorite),
-              CustomCategoryWidget(title: 'العروض', icon: SvgPath.percentageSquare),
-              CustomCategoryWidget(title: 'إعادة الطلب', icon: SvgPath.rotateLinear),
+              CustomCategoryWidget(
+                  title: 'العروض', icon: SvgPath.percentageSquare),
+              CustomCategoryWidget(
+                  title: 'إعادة الطلب', icon: SvgPath.rotateLinear),
             ],
           ),
-          SizedBox(height: 21.h,),
+          SizedBox(
+            height: 34.h,
+          ),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                height: 140.h,
+              ),
+              Container(
+                height: 120.h,
+                width: double.infinity,
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                child: Stack(
+                  alignment: Alignment.centerRight,
+                  children: [
+                    Image.asset(
+                      ImagesPath.secondImage,
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 20.w, left: 130.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 12.h,
+                          ),
+                          Text(
+                            'اشترك في نظام ادارة وتنظيم المشتريات للعيادات و الاقسام الصحية',
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontFamily: FontsPath.tajawalBold,
+                              color: AppColors.secondaryColor,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8.h,
+                          ),
+                          Text(
+                            'املأ الفورم وسنتواصل معك',
+                            style: TextStyle(
+                              fontSize: 10.sp,
+                              fontFamily: FontsPath.tajawalBold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 6.h,
+                          ),
+                          CustomButton(
+                            buttonOverLayColor: AppColors.primaryColor,
+                            buttonTitle: 'أبدا الان',
+                            isTapped: () {},
+                            height: 30.h,
+                            width: 75.w,
+                            paddingVertical: 0,
+                            paddingHorizontal: 2,
+                            buttonColor: Colors.white,
+                            textColor: AppColors.primaryColor,
+                            fontSize: 12.sp,
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Positioned(
+                left: 35.w,
+                child: Image.asset(ImagesPath.saudiGuy),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 21.h,
+          ),
         ],
       ),
     );
