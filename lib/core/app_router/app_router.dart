@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:tawredat/core/app_router/screen_names.dart';
+import 'package:tawredat/presentation/screens/auth_screens/change_forget_password_screen.dart';
+import 'package:tawredat/presentation/screens/auth_screens/login_and_register_screen.dart';
+import 'package:tawredat/presentation/screens/auth_screens/otp_screen.dart';
 import 'package:tawredat/presentation/screens/intro_screens/splash_screen.dart';
 
+import '../../presentation/screens/auth_screens/forget_password_screen.dart';
 import '../../presentation/screens/intro_screens/onboarding_screen.dart';
+import '../../presentation/screens/main_layout/main_layout_screen.dart';
 
 class AppRouter {
 
@@ -13,6 +18,16 @@ class AppRouter {
           return MaterialPageRoute(builder: (BuildContext context) { return const SplashScreen(); });
         case ScreenName.onboardingScreen:
           return MaterialPageRoute(builder: (BuildContext context) { return const OnboardingScreen(); });
+        case ScreenName.loginAndRegisterScreen:
+          return MaterialPageRoute(builder: (BuildContext context) { return const LoginAndRegisterScreen(); });
+        case ScreenName.forgetPasswordScreen:
+          return MaterialPageRoute(builder: (BuildContext context) { return const ForgetPasswordScreen(); });
+        case ScreenName.mainLayout:
+          return MaterialPageRoute(builder: (BuildContext context) { return const MainLayout(); });
+        case ScreenName.changeForgetPasswordScreen:
+          return MaterialPageRoute(builder: (BuildContext context) { return const ChangeForgetPasswordScreen(); });
+        case ScreenName.otpScreen:
+          return MaterialPageRoute(builder: (BuildContext context) { return const OtpScreen(); });
         default:
           return _errorRoute();
       }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../core/assets_path/fonts_path.dart';
+import '../../../core/assets_path/fonts_path.dart';
+
 
 class CustomButton extends StatelessWidget {
   final String buttonTitle;

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/assets_path/fonts_path.dart';
-import '../../../../core/assets_path/svg_path.dart';
-import '../../../shared_widgets/custom_button.dart';
-import '../widgets/auth_textFormField.dart';
+import '../../../core/app_router/screen_names.dart';
+import '../../../core/assets_path/fonts_path.dart';
+import '../../../core/assets_path/svg_path.dart';
+import '../../widgets/auth_widgets/auth_textFormField.dart';
+import '../../widgets/shared_widgets/custom_button.dart';
 
 class ChangeForgetPasswordScreen extends StatefulWidget {
   const ChangeForgetPasswordScreen({Key? key}) : super(key: key);
@@ -93,7 +94,9 @@ class _OtpScreenState extends State<ChangeForgetPasswordScreen> {
               SizedBox(height: 104.h,),
               CustomButton(
                   buttonTitle: 'تأكيد',
-                  isTapped: () {},
+                  isTapped: () {
+                    Navigator.pushNamed(context, ScreenName.mainLayout);
+                  },
                   width: double.infinity)
             ],
           ),
