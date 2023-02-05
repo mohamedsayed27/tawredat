@@ -7,5 +7,10 @@ class SvgPath{
   static const market = 'assets/svg/market.svg';
   static const cart = 'assets/svg/cart.svg';
   static const home = 'assets/svg/home.svg';
+  static const search = 'assets/svg/search.svg';
+  static const favorite = 'assets/svg/favorite.svg';
+  static const spark = 'assets/svg/spark.svg';
+  static const percentageSquare = 'assets/svg/percentageSquare.svg';
+  static const rotateLinear = 'assets/svg/rotateLinear.svg';
   SvgPath._();
 }

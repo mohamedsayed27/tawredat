@@ -47,7 +47,7 @@ class _MainLayoutState extends State<MainLayout> {
           ),
           child: BottomNavigationBar(
             backgroundColor: Colors.white,
-            selectedFontSize: 13.sp,
+            selectedFontSize: 12.sp,
             type: BottomNavigationBarType.fixed,
             unselectedFontSize: 12.sp,
             showSelectedLabels: true,
@@ -71,7 +71,7 @@ class _MainLayoutState extends State<MainLayout> {
             items: [
               BottomNavigationBarItem(
                 icon: Padding(
-                  padding: EdgeInsets.only(bottom: 5.0.h),
+                  padding: EdgeInsets.only(bottom: 8.0.h),
                   child: SvgPicture.asset(
                     SvgPath.home,
                     color: cIndex == 0
@@ -83,7 +83,7 @@ class _MainLayoutState extends State<MainLayout> {
               ),
               BottomNavigationBarItem(
                   icon: Padding(
-                    padding: EdgeInsets.only(bottom: 5.0.h),
+                    padding: EdgeInsets.only(bottom: 8.0.h),
                     child: SvgPicture.asset(SvgPath.market,
                         color: cIndex == 1
                             ? AppColors.secondaryColor
@@ -93,7 +93,7 @@ class _MainLayoutState extends State<MainLayout> {
                   label: 'المتاجر'),
               BottomNavigationBarItem(
                   icon: Padding(
-                    padding: EdgeInsets.only(bottom: 5.0.h),
+                    padding: EdgeInsets.only(bottom: 8.0.h),
                     child: SvgPicture.asset(SvgPath.cart,
                         color: cIndex == 2
                             ? AppColors.secondaryColor
@@ -103,7 +103,7 @@ class _MainLayoutState extends State<MainLayout> {
                   label: 'سلة المشتريات'),
               BottomNavigationBarItem(
                   icon: Padding(
-                    padding: EdgeInsets.only(bottom: 5.0.h),
+                    padding: EdgeInsets.only(bottom: 8.0.h),
                     child: SvgPicture.asset(SvgPath.profile,
                         color: cIndex == 3
                             ? AppColors.secondaryColor

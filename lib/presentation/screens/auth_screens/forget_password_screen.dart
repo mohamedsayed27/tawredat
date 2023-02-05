@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../core/app_router/screen_names.dart';
 import '../../../../core/assets_path/fonts_path.dart';
 import '../../../../core/assets_path/svg_path.dart';
-import '../../../shared_widgets/custom_button.dart';
-import '../widgets/auth_textFormField.dart';
+import '../../widgets/auth_widgets/auth_textFormField.dart';
+import '../../widgets/shared_widgets/custom_button.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({Key? key}) : super(key: key);
@@ -71,6 +72,7 @@ class _OtpScreenState extends State<ForgetPasswordScreen> {
               CustomButton(
                   buttonTitle: 'التالي',
                   isTapped: () {
+                    Navigator.pushNamed(context, ScreenName.changeForgetPasswordScreen);
 
                   },
                   width: double.infinity)

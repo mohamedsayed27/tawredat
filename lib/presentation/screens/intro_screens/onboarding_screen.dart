@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:tawredat/core/app_router/screen_names.dart';
 
 import '../../../core/app_colors/app_colors.dart';
 import '../../../core/assets_path/fonts_path.dart';
@@ -147,9 +148,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        pageViewController.nextPage(duration: const Duration(milliseconds: 150), curve: Curves.fastOutSlowIn);
+                        if(isLast){
+                          Navigator.pushNamed(context, ScreenName.loginAndRegisterScreen);
+
+                        }else{
+                          pageViewController.nextPage(duration: const Duration(milliseconds: 150), curve: Curves.fastOutSlowIn);
+
+                        }
                       },
                       style: ElevatedButton.styleFrom(
+                        foregroundColor: AppColors.primaryColor,
                         shape: const CircleBorder(),
                         backgroundColor: Colors.white,
                         padding: EdgeInsets.all(8.r),

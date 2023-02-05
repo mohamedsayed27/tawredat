@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tawredat/presentation/screens/auth_screens/screens/change_forget_password_screen.dart';
-import 'package:tawredat/presentation/screens/auth_screens/screens/forget_password_screen.dart';
-import 'package:tawredat/presentation/screens/auth_screens/screens/login_and_register_screen.dart';
-import 'package:tawredat/presentation/screens/auth_screens/screens/otp_screen.dart';
-import 'package:tawredat/presentation/screens/main_layout/main_layout_screen.dart';
 import 'core/app_colors/app_colors.dart';
 import 'core/app_router/app_router.dart';
 import 'core/app_router/screen_names.dart';
@@ -36,9 +31,9 @@ class MyApp extends StatelessWidget {
           supportedLocales: const [
             Locale("ar", "AE") // OR Locale('ar', 'AE') OR Other RTL locales
           ],
-          // onGenerateRoute: AppRouter.generateRoute,
-          // initialRoute: ScreenName.splashScreen,
-          home: MainLayout(),
+          onGenerateRoute: AppRouter.generateRoute,
+          initialRoute: ScreenName.splashScreen,
+          // home: LoginAndRegisterScreen(),
         );
       },
     );
