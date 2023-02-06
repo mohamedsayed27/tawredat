@@ -48,12 +48,15 @@ class HomeIntroWidget extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.zero,
               backgroundColor: Colors.white,
               foregroundColor: AppColors.primaryColor,
             ),
             child: Center(
               child: SvgPicture.asset(
                 SvgPath.cart,
+                height: 24.h,
+                width: 24.w,
                 color: AppColors.primaryColor,
               ),
             ),

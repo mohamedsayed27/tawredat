@@ -7,8 +7,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../../../core/assets_path/fonts_path.dart';
 import '../../../core/assets_path/svg_path.dart';
 
-class LastSeenWidget extends StatelessWidget {
-  const LastSeenWidget({Key? key}) : super(key: key);
+class BestSellWidget extends StatelessWidget {
+  const BestSellWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

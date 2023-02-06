@@ -7,6 +7,7 @@ import 'package:tawredat/presentation/screens/intro_screens/splash_screen.dart';
 
 import '../../presentation/screens/auth_screens/forget_password_screen.dart';
 import '../../presentation/screens/intro_screens/onboarding_screen.dart';
+import '../../presentation/screens/main_layout/home_screen_screens/favorites_screen.dart';
 import '../../presentation/screens/main_layout/main_layout_screen.dart';
 
 class AppRouter {
@@ -28,6 +29,8 @@ class AppRouter {
           return MaterialPageRoute(builder: (BuildContext context) { return const ChangeForgetPasswordScreen(); });
         case ScreenName.otpScreen:
           return MaterialPageRoute(builder: (BuildContext context) { return const OtpScreen(); });
+        case ScreenName.favoritesScreen:
+          return _animateRouteBuilder(const FavouritesScreen());
         default:
           return _errorRoute();
       }

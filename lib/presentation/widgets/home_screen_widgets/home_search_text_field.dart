@@ -31,6 +31,7 @@ class HomeSearchTextField extends StatelessWidget {
             border: outLinedInputBorder,
             enabledBorder: outLinedInputBorder,
             focusedBorder: outLinedInputBorder,
+            contentPadding: EdgeInsets.symmetric(vertical: 18.h),
             prefixIcon: Padding(
               padding: EdgeInsets.all(12.0.r),
               child: SvgPicture.asset(

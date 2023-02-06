@@ -7,9 +7,9 @@ import '../../../core/assets_path/fonts_path.dart';
 class CustomCategoryWidget extends StatelessWidget {
   final String title;
   final String icon;
-
+  final void Function()? onTap;
   const CustomCategoryWidget(
-      {Key? key, required this.title, required this.icon})
+      {Key? key, required this.title, required this.icon, required this.onTap})
       : super(key: key);
 
   @override
@@ -27,7 +27,7 @@ class CustomCategoryWidget extends StatelessWidget {
         ],
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onTap,
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.zero,
           backgroundColor: Colors.white,
@@ -40,6 +40,8 @@ class CustomCategoryWidget extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 icon,
+                height: 24.h,
+                width: 24.w,
                 color: AppColors.primaryColor,
               ),
               SizedBox(

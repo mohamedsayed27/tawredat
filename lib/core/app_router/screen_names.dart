@@ -6,4 +6,5 @@ static const otpScreen = 'otp.dart';
 static const forgetPasswordScreen = 'forgetPasswordScreen.dart';
 static const changeForgetPasswordScreen = 'changeForgetPasswordScreen.dart';
 static const mainLayout = 'mainLayout.dart';
+static const favoritesScreen = 'favorites_screen.dart';
 }
