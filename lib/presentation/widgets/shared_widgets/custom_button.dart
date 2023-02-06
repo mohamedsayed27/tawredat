@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../core/assets_path/fonts_path.dart';
-
 
 class CustomButton extends StatelessWidget {
   final String buttonTitle;
@@ -10,16 +8,24 @@ class CustomButton extends StatelessWidget {
   final double? height;
   final double? fontSize;
   final double width;
-  final double paddingVertical;
-  final double paddingHorizontal;
+  final double? paddingVertical;
+  final double? paddingHorizontal;
   final Color? buttonColor;
   final Color? buttonOverLayColor;
   final Color textColor;
+
   const CustomButton(
       {Key? key,
-        required this.buttonTitle,
-        required this.isTapped,
-        required this.width, this.height, this.paddingVertical=16, this.paddingHorizontal =45, this.buttonColor, this.textColor = Colors.white, this.fontSize, this.buttonOverLayColor})
+      required this.buttonTitle,
+      required this.isTapped,
+      required this.width,
+      this.height,
+      this.paddingVertical ,
+      this.paddingHorizontal,
+      this.buttonColor,
+      this.textColor = Colors.white,
+      this.fontSize,
+      this.buttonOverLayColor})
       : super(key: key);
 
   @override
@@ -29,12 +35,14 @@ class CustomButton extends StatelessWidget {
       width: width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+          elevation: 0,
           foregroundColor: buttonOverLayColor,
           backgroundColor: buttonColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.r), // <-- Radius
           ),
-          padding: EdgeInsets.symmetric(horizontal: paddingHorizontal.w, vertical: paddingVertical.h),
+          padding: EdgeInsets.symmetric(
+              horizontal: paddingHorizontal??45.w, vertical: paddingVertical??16.h),
         ),
         onPressed: () {
           isTapped();
@@ -44,9 +52,10 @@ class CustomButton extends StatelessWidget {
             buttonTitle,
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: textColor,
-                fontFamily: FontsPath.tajawalRegular,
-                fontSize: fontSize??15.sp),
+              color: textColor,
+              fontFamily: FontsPath.tajawalRegular,
+              fontSize: fontSize ?? 15.sp,
+            ),
           ),
         ),
       ),

@@ -52,12 +52,12 @@ class HomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomCategoryWidget(title: 'الافضل مبيعا', icon: SvgPath.spark, onTap: () {  },),
+              CustomCategoryWidget(title: 'الافضل مبيعا', icon: SvgPath.spark, onTap: () { Navigator.pushNamed(context, ScreenName.bestSellScreen); },),
               CustomCategoryWidget(title: 'المفضلة', icon: SvgPath.favorite, onTap: () { Navigator.pushNamed(context, ScreenName.favoritesScreen); },),
               CustomCategoryWidget(
-                  title: 'العروض', icon: SvgPath.percentageSquare, onTap: () {  },),
+                  title: 'العروض', icon: SvgPath.percentageSquare, onTap: () { Navigator.pushNamed(context, ScreenName.offersScreen); },),
               CustomCategoryWidget(
-                  title: 'إعادة الطلب', icon: SvgPath.rotateLinear, onTap: () {  },),
+                  title: 'إعادة الطلب', icon: SvgPath.rotateLinear, onTap: () { Navigator.pushNamed(context, ScreenName.reorderScreen); },),
             ],
           ),
           SizedBox(

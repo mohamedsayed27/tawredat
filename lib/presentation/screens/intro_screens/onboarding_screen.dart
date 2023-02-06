@@ -127,6 +127,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 Row(
                   children: [
+                    SizedBox(
+                      width: 40.h,
+                      height: 40.h,
+                    ),
                     Expanded(
                       child: Center(
                         child: SmoothPageIndicator(
@@ -143,25 +147,29 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                       ),
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        if(isLast){
-                          Navigator.pushNamed(context, ScreenName.loginAndRegisterScreen);
+                    SizedBox(
+                      width: 40.w,
+                      height: 40.h,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if(isLast){
+                            Navigator.pushNamed(context, ScreenName.loginAndRegisterScreen);
 
-                        }else{
-                          pageViewController.nextPage(duration: const Duration(milliseconds: 150), curve: Curves.fastOutSlowIn);
+                          }else{
+                            pageViewController.nextPage(duration: const Duration(milliseconds: 150), curve: Curves.fastOutSlowIn);
 
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: AppColors.primaryColor,
-                        shape: const CircleBorder(),
-                        backgroundColor: Colors.white,
-                        padding: EdgeInsets.all(8.r),
-                      ),
-                      child: const Icon(
-                        Icons.arrow_forward,
-                        color: AppColors.primaryColor,
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: AppColors.primaryColor,
+                          shape: const CircleBorder(),
+                          backgroundColor: Colors.white,
+                          padding: EdgeInsets.all(8.r),
+                        ),
+                        child: const Icon(
+                          Icons.arrow_forward,
+                          color: AppColors.primaryColor,
+                        ),
                       ),
                     ),
                   ],

@@ -29,7 +29,8 @@ class _MainLayoutState extends State<MainLayout> {
     return SafeArea(
       child: Scaffold(
         body: screens[cIndex],
-        bottomNavigationBar: Container(height: 80.h,
+        bottomNavigationBar: Container(
+          height: 80.h,
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
             color: Colors.white,

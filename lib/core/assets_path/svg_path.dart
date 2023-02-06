@@ -13,5 +13,9 @@ class SvgPath{
   static const spark = 'assets/svg/spark.svg';
   static const percentageSquare = 'assets/svg/percentageSquare.svg';
   static const rotateLinear = 'assets/svg/rotateLinear.svg';
+  static const location = 'assets/svg/location.svg';
+  static const visa = 'assets/svg/visa.svg';
+  static const mada = 'assets/svg/mada.svg';
+  static const masterCard = 'assets/svg/masterCard.svg';
   SvgPath._();
 }
