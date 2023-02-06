@@ -7,8 +7,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../../../core/assets_path/fonts_path.dart';
 import '../../../core/assets_path/svg_path.dart';
 
-class BestSellWidget extends StatelessWidget {
-  const BestSellWidget({Key? key}) : super(key: key);
+class OffersWidget extends StatelessWidget {
+  const OffersWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -86,13 +86,29 @@ class BestSellWidget extends StatelessWidget {
                     SizedBox(
                       height: 5.h,
                     ),
-                    Text(
-                      '1212 رس',
-                      style: TextStyle(
-                        fontFamily: FontsPath.tajawalBold,
-                        color: Colors.black,
-                        fontSize: 14.sp,
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          '1500 رس',
+                          style: TextStyle(
+                            fontFamily: FontsPath.tajawalBold,
+                            color: Colors.grey.shade500,
+                            decoration: TextDecoration.lineThrough,
+                            decorationColor: Colors.grey,
+                            decorationThickness: 40,
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                        SizedBox(width: 10.w,),
+                        Text(
+                          '1212 رس',
+                          style: TextStyle(
+                            fontFamily: FontsPath.tajawalBold,
+                            color: Colors.black,
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

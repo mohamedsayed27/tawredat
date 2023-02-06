@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:tawredat/core/app_router/screen_names.dart';
-import 'package:tawredat/presentation/screens/auth_screens/change_forget_password_screen.dart';
-import 'package:tawredat/presentation/screens/auth_screens/login_and_register_screen.dart';
-import 'package:tawredat/presentation/screens/auth_screens/otp_screen.dart';
-import 'package:tawredat/presentation/screens/intro_screens/splash_screen.dart';
-
+import '../../presentation/screens/auth_screens/change_forget_password_screen.dart';
 import '../../presentation/screens/auth_screens/forget_password_screen.dart';
+import '../../presentation/screens/auth_screens/login_and_register_screen.dart';
+import '../../presentation/screens/auth_screens/otp_screen.dart';
 import '../../presentation/screens/intro_screens/onboarding_screen.dart';
+import '../../presentation/screens/intro_screens/splash_screen.dart';
+import '../../presentation/screens/main_layout/home_screen_screens/best_sell_screen.dart';
 import '../../presentation/screens/main_layout/home_screen_screens/favorites_screen.dart';
+import '../../presentation/screens/main_layout/home_screen_screens/offers_screen.dart';
+import '../../presentation/screens/main_layout/home_screen_screens/reorder_screen.dart';
 import '../../presentation/screens/main_layout/main_layout_screen.dart';
+import 'screen_names.dart';
 
 class AppRouter {
 
@@ -31,6 +33,12 @@ class AppRouter {
           return MaterialPageRoute(builder: (BuildContext context) { return const OtpScreen(); });
         case ScreenName.favoritesScreen:
           return _animateRouteBuilder(const FavouritesScreen());
+        case ScreenName.bestSellScreen:
+          return _animateRouteBuilder(const BestSellScreen());
+        case ScreenName.offersScreen:
+          return _animateRouteBuilder(const OffersScreen());
+        case ScreenName.reorderScreen:
+          return _animateRouteBuilder(const ReorderScreen());
         default:
           return _errorRoute();
       }

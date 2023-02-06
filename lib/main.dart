@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tawredat/presentation/screens/main_layout/home_screen_screens/reorder_cart_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/payment_screen.dart';
 import 'core/app_colors/app_colors.dart';
 import 'core/app_router/app_router.dart';
 import 'core/app_router/screen_names.dart';
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(413, 892),
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
-          title: 'Flutter Demo',
+          title: 'Tawredat',
           theme: ThemeData(
             primarySwatch:
                 AppColors.createMaterialColor(AppColors.primaryColor),
@@ -31,9 +33,9 @@ class MyApp extends StatelessWidget {
           supportedLocales: const [
             Locale("ar", "AE") // OR Locale('ar', 'AE') OR Other RTL locales
           ],
-          onGenerateRoute: AppRouter.generateRoute,
-          initialRoute: ScreenName.splashScreen,
-          // home: FavouritesScreen(),
+          // onGenerateRoute: AppRouter.generateRoute,
+          // initialRoute: ScreenName.splashScreen,
+          home: PaymentScreen(),
         );
       },
     );

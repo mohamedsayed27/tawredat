@@ -4,6 +4,7 @@ class AppColors{
   static const primaryColor = Color(0xff004AAD);
   static const secondaryColor = Color(0xffFF9200);
   static const authTextFieldFillColor =  Color(0xffF9F9F9);
+  static Color rrr =  Colors.grey.shade100;
 
   static MaterialColor createMaterialColor(Color color) {
     List strengths = <double>[.05];
