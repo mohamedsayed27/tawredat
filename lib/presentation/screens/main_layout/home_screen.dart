@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:tawredat/core/app_router/screen_names.dart';
 import 'package:tawredat/core/assets_path/images_path.dart';
 import 'package:tawredat/presentation/widgets/shared_widgets/custom_button.dart';
 import '../../../core/app_colors/app_colors.dart';
@@ -9,6 +9,7 @@ import '../../../core/assets_path/svg_path.dart';
 import '../../widgets/home_screen_widgets/custom_category_widget.dart';
 import '../../widgets/home_screen_widgets/home_intro_widget.dart';
 import '../../widgets/home_screen_widgets/home_search_text_field.dart';
+import '../../widgets/home_screen_widgets/last_seen_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,9 +22,9 @@ class HomeScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         children: [
           SizedBox(
-            height: 70.h,
+            height: 60.h,
           ),
-          HomeIntroWidget(name: 'أحمد',),
+          const HomeIntroWidget(name: 'أحمد',),
           SizedBox(
             height: 43.h,
           ),
@@ -50,13 +51,13 @@ class HomeScreen extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              CustomCategoryWidget(title: 'الافضل مبيعا', icon: SvgPath.spark),
-              CustomCategoryWidget(title: 'المفضلة', icon: SvgPath.favorite),
+            children: [
+              CustomCategoryWidget(title: 'الافضل مبيعا', icon: SvgPath.spark, onTap: () {  },),
+              CustomCategoryWidget(title: 'المفضلة', icon: SvgPath.favorite, onTap: () { Navigator.pushNamed(context, ScreenName.favoritesScreen); },),
               CustomCategoryWidget(
-                  title: 'العروض', icon: SvgPath.percentageSquare),
+                  title: 'العروض', icon: SvgPath.percentageSquare, onTap: () {  },),
               CustomCategoryWidget(
-                  title: 'إعادة الطلب', icon: SvgPath.rotateLinear),
+                  title: 'إعادة الطلب', icon: SvgPath.rotateLinear, onTap: () {  },),
             ],
           ),
           SizedBox(
@@ -69,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                 height: 140.h,
               ),
               Container(
-                height: 120.h,
+                height: 117.h,
                 width: double.infinity,
                 clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(
@@ -133,12 +134,16 @@ class HomeScreen extends StatelessWidget {
               ),
               Positioned(
                 left: 35.w,
-                child: Image.asset(ImagesPath.saudiGuy),
+                child: Image.asset(ImagesPath.saudiGuy,height: 175.h,width: 76.w,),
               ),
             ],
           ),
           SizedBox(
-            height: 21.h,
+            height: 35.7.h,
+          ),
+          LastSeenWidget(),
+          SizedBox(
+            height: 20.h,
           ),
         ],
       ),

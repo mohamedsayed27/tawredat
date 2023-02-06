@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           ],
           onGenerateRoute: AppRouter.generateRoute,
           initialRoute: ScreenName.splashScreen,
-          // home: LoginAndRegisterScreen(),
+          // home: FavouritesScreen(),
         );
       },
     );

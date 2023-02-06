@@ -8,6 +8,7 @@ class SvgPath{
   static const cart = 'assets/svg/cart.svg';
   static const home = 'assets/svg/home.svg';
   static const search = 'assets/svg/search.svg';
+  static const favoritesFilled = 'assets/svg/favoritesFilled.svg';
   static const favorite = 'assets/svg/favorite.svg';
   static const spark = 'assets/svg/spark.svg';
   static const percentageSquare = 'assets/svg/percentageSquare.svg';
