@@ -5,6 +5,7 @@ import 'package:tawredat/presentation/screens/main_layout/home_screen_screens/re
 import 'package:tawredat/presentation/screens/main_layout/home_screen_screens/reorder_cart_screen.dart';
 import 'package:tawredat/presentation/screens/main_layout/markets_screen_screens/market_details_screen.dart';
 import 'package:tawredat/presentation/screens/main_layout/payment_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/about_app_screen.dart';
 import 'core/app_colors/app_colors.dart';
 import 'core/app_router/app_router.dart';
 import 'core/app_router/screen_names.dart';
@@ -35,9 +36,9 @@ class MyApp extends StatelessWidget {
           supportedLocales: const [
             Locale("ar", "AE") // OR Locale('ar', 'AE') OR Other RTL locales
           ],
-          onGenerateRoute: AppRouter.generateRoute,
-          initialRoute: ScreenName.splashScreen,
-          // home: MarketDetailsScreen(),
+          // onGenerateRoute: AppRouter.generateRoute,
+          // initialRoute: ScreenName.splashScreen,
+          home: AboutScreen(),
         );
       },
     );

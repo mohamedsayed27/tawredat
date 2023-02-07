@@ -8,12 +8,12 @@ class CustomBackground extends StatelessWidget {
   final double? firstContainerHeight;
   final Widget child;
   final String screenTitle;
-
+  final bool isProfile;
   const CustomBackground(
       {Key? key,
       this.firstContainerHeight,
       required this.child,
-      required this.screenTitle})
+      required this.screenTitle,this.isProfile=false})
       : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class CustomBackground extends StatelessWidget {
                   SizedBox(
                     width: 34.w,
                     height: 34.h,
-                    child: ElevatedButton(
+                    child: isProfile?null:ElevatedButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },

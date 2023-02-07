@@ -38,7 +38,7 @@ class _MarketDetailsScreenState extends State<MarketDetailsScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 15.w),
                 children: [
                   Text(
-                    'منتجات المتجر',
+                    'تقيمات العملاء',
                     style: TextStyle(
                       fontFamily: FontsPath.tajawalRegular,
                       color: Colors.black,
@@ -68,7 +68,7 @@ class _MarketDetailsScreenState extends State<MarketDetailsScreen> {
                   ),
                   SizedBox(height: 50.h,),
                   Text(
-                    'تقيمات العملاء',
+                    'منتجات المتجر',
                     style: TextStyle(
                       fontFamily: FontsPath.tajawalRegular,
                       color: Colors.black,
@@ -139,7 +139,7 @@ class _MarketDetailsScreenState extends State<MarketDetailsScreen> {
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: const Color(0xff707070).withOpacity(0.3),
+          color: Color(0xff707070).withOpacity(0.3),
         )
       ),
       child: Column(
