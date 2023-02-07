@@ -6,4 +6,5 @@ class FontsPath{
   static const tajawalLight = 'tajawal light';
   static const tajawalMedium = 'tajawal medium';
   static const tajawalRegular = 'tajawal regular';
+  FontsPath._();
 }

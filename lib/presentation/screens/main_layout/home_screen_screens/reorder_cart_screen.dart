@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tawredat/presentation/widgets/auth_widgets/auth_textFormField.dart';
 import 'package:tawredat/presentation/widgets/shared_widgets/custom_button.dart';
 import '../../../../core/app_colors/app_colors.dart';
+import '../../../../core/app_router/screen_names.dart';
 import '../../../../core/assets_path/fonts_path.dart';
 import '../../../widgets/shared_widgets/address_dropdown_button.dart';
 import '../../../widgets/shared_widgets/cart_item.dart';
@@ -125,13 +126,13 @@ class _ReorderCartScreenState extends State<ReorderCartScreen> {
       bottomNavigationBar: Container(
         height: 150.h,
         clipBehavior: Clip.antiAlias,
-        padding: EdgeInsets.symmetric(vertical: 15.h,horizontal: 14.w),
+        padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 14.w),
         decoration: BoxDecoration(
-            color: AppColors.authTextFieldFillColor,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10.r),
-              topRight: Radius.circular(10.r),
-            ),
+          color: AppColors.authTextFieldFillColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(10.r),
+            topRight: Radius.circular(10.r),
+          ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -157,7 +158,13 @@ class _ReorderCartScreenState extends State<ReorderCartScreen> {
                 ),
               ],
             ),
-            CustomButton(buttonTitle: 'التالي', isTapped: (){}, width: double.infinity)
+            CustomButton(
+              buttonTitle: 'التالي',
+              isTapped: () {
+                Navigator.pushNamed(context, ScreenName.paymentScreen);
+              },
+              width: double.infinity,
+            )
           ],
         ),
       ),

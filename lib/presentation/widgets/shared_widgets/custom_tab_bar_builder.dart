@@ -13,8 +13,9 @@ class CustomTabBarButtonBuilder extends StatelessWidget{
   final Color activeTitleButtonColor;
   final Color inactiveTitleButtonColor;
   final void Function() onButtonTapped;
+  final bool isInMarketsScreen;
 
-  const CustomTabBarButtonBuilder({Key? key, required this.title, required this.index, required this.activeBackgroundButtonColor, required this.activeForegroundButtonColor, required this.inactiveBackgroundButtonColor, required this.inactiveForegroundButtonColor, required this.activeTitleButtonColor, required this.inactiveTitleButtonColor, required this.currentIndex, required this.onButtonTapped}) : super(key: key);
+  const CustomTabBarButtonBuilder({Key? key, required this.title, required this.index, required this.activeBackgroundButtonColor, required this.activeForegroundButtonColor, required this.inactiveBackgroundButtonColor, required this.inactiveForegroundButtonColor, required this.activeTitleButtonColor, required this.inactiveTitleButtonColor, required this.currentIndex, required this.onButtonTapped, this.isInMarketsScreen = false}) : super(key: key);
 
 
   @override
@@ -27,7 +28,7 @@ class CustomTabBarButtonBuilder extends StatelessWidget{
         child: ElevatedButton(
           onPressed: onButtonTapped,
           style: ElevatedButton.styleFrom(
-            elevation: 0,
+            elevation: isInMarketsScreen?1:0,
             padding: EdgeInsets.zero,
             backgroundColor: currentIndex == index?activeBackgroundButtonColor:inactiveBackgroundButtonColor,
             shape: RoundedRectangleBorder(
@@ -35,7 +36,7 @@ class CustomTabBarButtonBuilder extends StatelessWidget{
             ),
             foregroundColor: currentIndex == index?activeForegroundButtonColor:inactiveForegroundButtonColor,
             side: BorderSide(
-              color: currentIndex == index?activeBackgroundButtonColor:inactiveBackgroundButtonColor,
+              color: isInMarketsScreen?const Color(0xffEBEBEB).withOpacity(0.9):currentIndex == index?activeBackgroundButtonColor:inactiveBackgroundButtonColor,
             ),
           ),
           child: Text(

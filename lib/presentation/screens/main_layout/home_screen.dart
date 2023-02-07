@@ -28,7 +28,17 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 43.h,
           ),
-          const HomeSearchTextField(),
+          Stack(
+            children: [
+              const HomeSearchTextField(),
+              InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, ScreenName.searchScreen);
+                  },
+                child: SizedBox(height: 60.h,width: double.infinity,),
+              ),
+            ],
+          ),
           SizedBox(
             height: 20.h,
           ),
@@ -117,7 +127,9 @@ class HomeScreen extends StatelessWidget {
                           CustomButton(
                             buttonOverLayColor: AppColors.primaryColor,
                             buttonTitle: 'أبدا الان',
-                            isTapped: () {},
+                            isTapped: () {
+                              Navigator.pushNamed(context, ScreenName.registerAsAVendorScreen);
+                            },
                             height: 30.h,
                             width: 75.w,
                             paddingVertical: 0,
@@ -141,7 +153,7 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 35.7.h,
           ),
-          LastSeenWidget(),
+          const LastSeenWidget(),
           SizedBox(
             height: 20.h,
           ),
