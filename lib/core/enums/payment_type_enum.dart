@@ -1,4 +1,4 @@
-enum PaymentType{
+enum PaymentTypeEnum{
  mada,
  visa,
  materCard,

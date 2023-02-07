@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tawredat/core/app_colors/app_colors.dart';
+import 'package:tawredat/core/app_router/screen_names.dart';
 import 'package:tawredat/core/assets_path/images_path.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:tawredat/presentation/widgets/shared_widgets/custom_button.dart';
@@ -158,7 +159,9 @@ class ReorderItemBuilder extends StatelessWidget {
             SizedBox(height: 5.h,),
             CustomButton(
               buttonTitle: 'إعادة طلب المنتج',
-              isTapped: () {},
+              isTapped: () {
+                Navigator.pushNamed(context, ScreenName.reorderCartScreen);
+              },
               width: double.infinity,
               height: 30.h,
               buttonColor: const Color(0xff004AAD).withOpacity(0.34),

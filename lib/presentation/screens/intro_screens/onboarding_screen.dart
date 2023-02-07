@@ -60,26 +60,29 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Align(
                   alignment: Alignment.topRight,
                   child: SizedBox(
-                    height: 30.h,
+                    height: 40.h,
                     child: isLast
                         ? const SizedBox.shrink()
-                        : Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                'تخطي',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: FontsPath.tajawalRegular,
-                                    fontSize: 16.sp),
-                              ),
-                              Icon(
-                                Icons.arrow_forward_ios,
-                                color: Colors.white,
-                                size: 18.r,
-                              ),
-                            ],
-                          ),
+                        : TextButton(
+                          onPressed: () { Navigator.pushNamedAndRemoveUntil(context, ScreenName.loginAndRegisterScreen, (route) => false); },
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  'تخطي',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: FontsPath.tajawalRegular,
+                                      fontSize: 16.sp),
+                                ),
+                                Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.white,
+                                  size: 18.r,
+                                ),
+                              ],
+                            ),
+                        ),
                   ),
                 ),
                 SizedBox(
