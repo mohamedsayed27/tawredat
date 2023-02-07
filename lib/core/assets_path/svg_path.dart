@@ -16,6 +16,14 @@ class SvgPath{
   static const location = 'assets/svg/location.svg';
   static const filter = 'assets/svg/filter.svg';
   static const share = 'assets/svg/share.svg';
+  static const cube = 'assets/svg/cube.svg';
+  static const wallet = 'assets/svg/wallet.svg';
+  static const rating = 'assets/svg/rating.svg';
+  static const check = 'assets/svg/check.svg';
+  static const complaints = 'assets/svg/complaints.svg';
+  static const document = 'assets/svg/document.svg';
+  static const information = 'assets/svg/information.svg';
+  static const logoBlue = 'assets/svg/logoBlue.svg';
 
   SvgPath._();
 }

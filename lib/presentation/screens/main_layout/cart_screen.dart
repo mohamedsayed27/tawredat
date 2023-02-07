@@ -16,13 +16,47 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+  ScrollController cartScroller = ScrollController();
+  ScrollController screenScroller = ScrollController();
   final TextEditingController cubonController = TextEditingController();
+  ScrollPhysics physics = const ScrollPhysics();
 
+
+  void listViewScrollListener(){
+    if(cartScroller.offset >= cartScroller.position.maxScrollExtent &&
+        !cartScroller.position.outOfRange){
+      if(screenScroller.offset==0){
+        screenScroller.animateTo(50,duration: const Duration(milliseconds: 200),curve: Curves.linear);
+      }
+      setState((){
+        physics = const NeverScrollableScrollPhysics();
+      });
+    }
+  }
+
+  void mainScrollListener(){
+    if(screenScroller.offset <= screenScroller.position.minScrollExtent &&
+        !screenScroller.position.outOfRange){
+      setState((){
+        if(physics is NeverScrollableScrollPhysics){
+          physics = const ScrollPhysics();
+          cartScroller.animateTo(cartScroller.position.maxScrollExtent-50,duration: const Duration(milliseconds: 200),curve: Curves.linear);
+        }
+      });
+    }
+  }
+  @override
+  void initState() {
+    cartScroller.addListener(listViewScrollListener);
+    screenScroller.addListener(mainScrollListener);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        controller: screenScroller,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 13.0.w),
           child: Column(
@@ -50,6 +84,7 @@ class _CartScreenState extends State<CartScreen> {
                 height: 350.h,
                 width: double.infinity,
                 child: ListView.builder(
+                  controller: cartScroller,
                   padding: EdgeInsets.symmetric(horizontal: 14.0.w),
                   itemBuilder: (BuildContext context, int index) {
                     return const CartItemBuilder();
