@@ -6,8 +6,8 @@ import '../../../../core/assets_path/fonts_path.dart';
 import '../../../../core/assets_path/svg_path.dart';
 import '../../../widgets/shared_widgets/about_widget.dart';
 
-class AboutScreen extends StatelessWidget {
-  const AboutScreen({Key? key}) : super(key: key);
+class PrivacyAndPolicy extends StatelessWidget {
+  const PrivacyAndPolicy({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class AboutScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                    'عن التطبيق',
+                    'سياسة الخصوصية',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16.sp,
@@ -78,7 +78,7 @@ class AboutScreen extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return const AboutWidget(
                     title:
-                        'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم يوضع في التصاميم  لتعرض على العميللوريم ايبسوم هو نموذج افتراضي  يوضع في التصاميم',
+                    'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم يوضع في التصاميم  لتعرض على العميللوريم ايبسوم هو نموذج افتراضي  يوضع في التصاميم',
                   );
                 },
                 itemCount: 10,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tawredat/core/app_router/screen_names.dart';
 import 'package:tawredat/core/assets_path/svg_path.dart';
-
 import '../../../core/app_colors/app_colors.dart';
 import '../../../core/assets_path/fonts_path.dart';
 import '../../widgets/markets_component/build_markets_item.dart';

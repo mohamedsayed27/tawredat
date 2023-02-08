@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../core/app_router/screen_names.dart';
 import '../../../core/assets_path/fonts_path.dart';
 import '../../../core/assets_path/svg_path.dart';
-import '../../widgets/auth_widgets/auth_textFormField.dart';
+import '../../widgets/auth_widgets/auth_text_form_field.dart';
 import '../../widgets/shared_widgets/custom_button.dart';
 
 class ChangeForgetPasswordScreen extends StatefulWidget {

@@ -139,7 +139,7 @@ class _MarketDetailsScreenState extends State<MarketDetailsScreen> {
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: Color(0xff707070).withOpacity(0.3),
+          color: const Color(0xff707070).withOpacity(0.3),
         )
       ),
       child: Column(
