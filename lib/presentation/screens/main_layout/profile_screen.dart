@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tawredat/core/app_router/screen_names.dart';
 import '../../../core/assets_path/svg_path.dart';
 import '../../widgets/home_screen_widgets/custom_category_widget.dart';
 import '../../widgets/profile_widgets/custom_container.dart';
@@ -28,22 +29,32 @@ class ProfileScreen extends StatelessWidget {
                   CustomCategoryWidget(
                     title: 'الطلبات',
                     icon: SvgPath.cube,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, ScreenName.myOrdersScreen);
+                    },
                   ),
                   CustomCategoryWidget(
                     title: 'المفضلة',
-                    icon: SvgPath.wallet,
-                    onTap: () {},
+                    icon: SvgPath.favorite,
+                    onTap: () {
+                      Navigator.pushNamed(context, ScreenName.favoritesScreen);
+
+                    },
                   ),
                   CustomCategoryWidget(
                     title: 'المحفظة',
-                    icon: SvgPath.percentageSquare,
-                    onTap: () {},
+                    icon: SvgPath.wallet,
+                    onTap: () {
+                      Navigator.pushNamed(context, ScreenName.myWalletScreen);
+
+                    },
                   ),
                   CustomCategoryWidget(
                     title: 'البروفايل',
                     icon: SvgPath.profile,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, ScreenName.informationScreen);
+                    },
                   ),
                 ],
               ),
@@ -61,19 +72,30 @@ class ProfileScreen extends StatelessWidget {
                     BuildCustomProfileContainer(
                         image: SvgPath.information,
                         title: 'عن التطبيق',
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.pushNamed(context, ScreenName.aboutApp);
+                        }),
                     BuildCustomProfileContainer(
                         image: SvgPath.check,
                         title: 'الشروط والاحكام',
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.pushNamed(context, ScreenName.termsAndConditionsScreen);
+
+                        }),
                     BuildCustomProfileContainer(
                         image: SvgPath.document,
                         title: 'سياسة الخصوصية',
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.pushNamed(context, ScreenName.privacyScreen);
+
+                        }),
                     BuildCustomProfileContainer(
                         image: SvgPath.complaints,
                         title: 'الاقتراحات والشكاوي',
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.pushNamed(context, ScreenName.complaintsAndSuggestions);
+
+                        }),
                     BuildCustomProfileContainer(
                         image: SvgPath.share,
                         title: 'مشاركة التطبيق',
@@ -85,9 +107,12 @@ class ProfileScreen extends StatelessWidget {
                     BuildCustomProfileContainer(
                         image: SvgPath.lock,
                         title: 'تغير كلمة المرور',
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.pushNamed(context, ScreenName.changePassword);
+
+                        }),
                     BuildCustomProfileContainer(
-                        image: SvgPath.location,
+                        image: SvgPath.logout,
                         title: 'تسجيل الخروج',
                         onPressed: () {}),
                   ],

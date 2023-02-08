@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tawredat/core/assets_path/svg_path.dart';
-import 'package:tawredat/presentation/widgets/auth_widgets/auth_textFormField.dart';
+import 'package:tawredat/presentation/widgets/auth_widgets/auth_text_form_field.dart';
 import 'package:tawredat/presentation/widgets/shared_widgets/custom_button.dart';
-
 import '../../../../core/app_colors/app_colors.dart';
 import '../../../../core/assets_path/fonts_path.dart';
 

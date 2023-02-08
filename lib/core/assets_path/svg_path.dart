@@ -24,6 +24,8 @@ class SvgPath{
   static const document = 'assets/svg/document.svg';
   static const information = 'assets/svg/information.svg';
   static const logoBlue = 'assets/svg/logoBlue.svg';
+  static const logout = 'assets/svg/logout.svg';
+  static const dollar = 'assets/svg/dollar.svg';
 
   SvgPath._();
 }

@@ -15,4 +15,16 @@ static const paymentScreen = 'payment_screen.dart';
 static const registerAsAVendorScreen = 'register_as_a_vendor_screen.dart';
 static const searchScreen = 'search_screen.dart';
 static const marketDetailsScreen = 'market_details_screen.dart';
+static const aboutApp = 'aboutApp.dart';
+static const changePassword = 'changePassword.dart';
+static const chargeWallet = 'chargeWallet.dart';
+static const complaintsAndSuggestions = 'complaintsAndSuggestions.dart';
+static const editProfileScreen = 'editProfileScreen.dart';
+static const informationScreen = 'informationScreen.dart';
+static const myOrdersScreen = 'myOrdersScreen.dart';
+static const myOrdersDetailsScreen = 'myOrdersDetailsScreen.dart';
+static const myWalletScreen = 'myWalletScreen.dart';
+static const privacyScreen = 'privacyScreen.dart';
+static const termsAndConditionsScreen = 'termsAndConditionsScreen.dart';
+static const productDetailsScreen = 'productDetailsScreen.dart';
 }

@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:tawredat/presentation/screens/main_layout/home_screen_screens/reorder_cart_screen.dart';
 import 'package:tawredat/presentation/screens/main_layout/payment_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/about_app_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/change_password_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/charge_wallet_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/complaints_and_suggetions_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/edit_profile_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/information_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/my_order_details_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/my_orders_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/my_wallet_screen.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/privacy_and_policy.dart';
+import 'package:tawredat/presentation/screens/main_layout/profile_screens/terms_and_conditions.dart';
 import '../../presentation/screens/auth_screens/change_forget_password_screen.dart';
 import '../../presentation/screens/auth_screens/forget_password_screen.dart';
 import '../../presentation/screens/auth_screens/login_and_register_screen.dart';
@@ -15,6 +26,7 @@ import '../../presentation/screens/main_layout/home_screen_screens/reorder_scree
 import '../../presentation/screens/main_layout/home_screen_screens/search_screen.dart';
 import '../../presentation/screens/main_layout/main_layout_screen.dart';
 import '../../presentation/screens/main_layout/markets_screen_screens/market_details_screen.dart';
+import '../../presentation/widgets/shared_widgets/product_details_screen.dart';
 import 'screen_names.dart';
 
 class AppRouter {
@@ -67,6 +79,30 @@ class AppRouter {
           return SlideRightRoute(page:const OffersScreen());
         case ScreenName.reorderScreen:
           return SlideRightRoute(page:const ReorderScreen());
+        case ScreenName.aboutApp:
+          return SlideRightRoute(page:const AboutScreen());
+        case ScreenName.changePassword:
+          return SlideRightRoute(page:const ChangePasswordScreen());
+        case ScreenName.chargeWallet:
+          return SlideRightRoute(page:const ChargeWalletScreen());
+        case ScreenName.complaintsAndSuggestions:
+          return SlideRightRoute(page:const ComplaintsAndSuggestionsScreen());
+        case ScreenName.editProfileScreen:
+          return SlideRightRoute(page:const EditProfileScreen());
+        case ScreenName.informationScreen:
+          return SlideRightRoute(page:const InformationScreen());
+        case ScreenName.myOrdersScreen:
+          return SlideRightRoute(page:const MyOrderScreen());
+        case ScreenName.myOrdersDetailsScreen:
+          return SlideRightRoute(page:const MyOrderDetailsScreen());
+        case ScreenName.myWalletScreen:
+          return SlideRightRoute(page:const MyWalletScreen());
+        case ScreenName.privacyScreen:
+          return SlideRightRoute(page:const PrivacyAndPolicy());
+        case ScreenName.productDetailsScreen:
+          return SlideRightRoute(page:const ProductDetailsScreen());
+        case ScreenName.termsAndConditionsScreen:
+          return SlideRightRoute(page:const TermsAndConditions());
         default:
           return _errorRoute();
       }

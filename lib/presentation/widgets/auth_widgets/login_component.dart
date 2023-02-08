@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/app_router/screen_names.dart';
 import '../../../../core/assets_path/fonts_path.dart';
 import '../shared_widgets/custom_button.dart';
-import 'auth_textFormField.dart';
+import 'auth_text_form_field.dart';
 
 
 class LoginComponent extends StatelessWidget {
