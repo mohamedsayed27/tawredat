@@ -7,6 +7,7 @@ import '../shared_widgets/custom_button.dart';
 import 'auth_text_form_field.dart';
 
 class RegisterComponent extends StatelessWidget {
+  final TextEditingController userName;
   final TextEditingController phoneController;
   final TextEditingController emailController;
   final TextEditingController passwordController;
@@ -21,7 +22,7 @@ class RegisterComponent extends StatelessWidget {
       required this.passwordController,
       required this.confirmPasswordController,
       required this.onButtonTapped,
-      required this.formKey})
+      required this.formKey, required this.userName})
       : super(key: key);
 
   @override
@@ -29,8 +30,30 @@ class RegisterComponent extends StatelessWidget {
     return Form(
       key: formKey,
       child: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 5.h),
         children: [
+          AuthTextFormField(
+            hintText: 'اسم المستحدم',
+            keyboardType: TextInputType.text,
+            controller: userName,
+            prefix: Padding(
+              padding: EdgeInsets.all(13.0.r),
+              child: SvgPicture.asset(
+                SvgPath.profile,
+                width: 24.w,
+                height: 24.h,
+              ),
+            ),
+            validate: (val){
+              if(val!.isEmpty){
+                return 'يجب ';
+              }
+              return null;
+            },
+          ),
+          SizedBox(
+            height: 23.h,
+          ),
           AuthTextFormField(
             hintText: 'الهاتف',
             keyboardType: TextInputType.phone,

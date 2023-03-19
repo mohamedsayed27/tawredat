@@ -28,7 +28,7 @@ class LoginComponent extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
         children: [
           AuthTextFormField(
-            keyboardType: TextInputType.phone,
+            keyboardType: TextInputType.text,
             hintText: 'الهاتف',
             controller: phoneController,
             validate: (val){
