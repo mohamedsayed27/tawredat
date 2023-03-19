@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tawredat/business_logic/auth_cubit/auth_cubit.dart';
+import 'package:tawredat/business_logic/auth_cubit/auth_state.dart';
 import 'package:tawredat/core/app_colors/app_colors.dart';
 import 'package:tawredat/core/app_router/screen_names.dart';
 import 'package:tawredat/core/assets_path/fonts_path.dart';
@@ -19,9 +22,13 @@ class LoginAndRegisterScreen extends StatefulWidget {
 
 class _LoginAndRegisterScreenState extends State<LoginAndRegisterScreen> {
   final TextEditingController phoneRegisterController = TextEditingController();
+  final TextEditingController userNameRegisterController =
+  TextEditingController();
   final TextEditingController emailRegisterController = TextEditingController();
-  final TextEditingController passwordRegisterController = TextEditingController();
-  final TextEditingController confirmPasswordRegisterController = TextEditingController();
+  final TextEditingController passwordRegisterController =
+  TextEditingController();
+  final TextEditingController confirmPasswordRegisterController =
+  TextEditingController();
   final TextEditingController phoneLoginController = TextEditingController();
   final TextEditingController passwordLoginController = TextEditingController();
   var loginFormKey = GlobalKey<FormState>();
@@ -99,27 +106,45 @@ class _LoginAndRegisterScreenState extends State<LoginAndRegisterScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 70.h,),
+                    SizedBox(
+                      height: 70.h,
+                    ),
                     Expanded(
                       child: isLogin
-                          ? LoginComponent(
+                          ? BlocConsumer<AuthCubit, AuthState>(
+                        listener: (context, state) {
+
+                        },
+                        builder: (context, state) {
+                          var cubit = AuthCubit.get(context);
+                          return LoginComponent(
                               phoneController: phoneLoginController,
                               passwordController: passwordLoginController,
-                              onButtonTapped: (){
-                                Navigator.pushNamed(context, ScreenName.mainLayout);
-                              },
-                              formKey: registerFormKey)
-                          : RegisterComponent(
-                              phoneController: phoneRegisterController,
-                              emailController: emailRegisterController,
-                              passwordController: passwordRegisterController,
-                              confirmPasswordController:
-                                  confirmPasswordRegisterController,
                               onButtonTapped: () {
-                                Navigator.pushNamed(context, ScreenName.otpScreen);
+                               cubit.login(name: phoneLoginController.text, password: passwordLoginController.text);
                               },
-                              formKey: registerFormKey,
-                            ),
+                              formKey: registerFormKey);
+                        },
+                      )
+                          : BlocConsumer<AuthCubit, AuthState>(
+                        listener: (context, state) {
+
+                        },
+                        builder: (context, state) {
+                          var cubit = AuthCubit.get(context);
+                          return RegisterComponent(
+                            phoneController: phoneRegisterController,
+                            emailController: emailRegisterController,
+                            passwordController: passwordRegisterController,
+                            confirmPasswordController: confirmPasswordRegisterController,
+                            userName: userNameRegisterController,
+                            onButtonTapped: () {
+                              cubit.register(name: userNameRegisterController.text, email: emailRegisterController.text, phone: phoneRegisterController.text, password: passwordRegisterController.text);
+                            },
+                            formKey: registerFormKey,
+                          );
+                        },
+                      ),
                     ),
                   ],
                 ),
